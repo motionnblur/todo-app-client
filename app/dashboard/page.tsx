@@ -23,7 +23,7 @@ export default function page() {
             className="h-10 w-10 bg-black rounded-full ml-4 cursor-pointer flex items-center justify-center"
             onMouseUp={openLeftMenu}
           >
-            <AlignJustify className="rotate-90" />
+            <AlignJustify className={leftMenu ? "rotate-0" : "rotate-90"} />
           </div>
           <div className="w-24 h-4/5 bg-black rounded-md flex justify-center items-center cursor-pointer ml-4">
             Dashboard
