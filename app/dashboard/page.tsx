@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { AlignJustify } from "react-feather";
+import { AlignJustify, User } from "react-feather";
 
 export default function page() {
   const [leftMenu, setLeftMenu] = useState<Boolean>(false);
@@ -32,7 +32,9 @@ export default function page() {
             Settings
           </div>
         </div>
-        <div className="h-full w-1/6 p-1 flex items-center"></div>
+        <div className="h-full w-1/6 p-1 flex items-center justify-end mr-4">
+          <User className="cursor-pointer" />
+        </div>
       </div>
       <div className="w-full h-full flex flex-row">
         {leftMenu && <LeftMenu />}
