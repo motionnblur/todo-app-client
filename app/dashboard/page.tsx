@@ -10,7 +10,11 @@ export default function page() {
     return (
       <div className="h-full w-[28vh] bg-zinc-950 flex flex-col">
         <div className="w-full h-full p-2 flex flex-col">
-          <div className="w-full h-8 bg-slate-800 rounded-md mt-2"></div>
+          <div className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer">
+            <div className="flex justify-center items-center mt-1">
+              Add todo
+            </div>
+          </div>
         </div>
       </div>
     );
