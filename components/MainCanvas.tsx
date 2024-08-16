@@ -34,10 +34,12 @@ export default function MainCanvas() {
   }, []);
 
   return (
-    <div className="w-full h-full flex justify-center bg-neutral-800 flex-wrap gap-2 p-2">
-      {todo?.map((t) => (
-        <TodoForm name={t.name} items={t.items} />
-      ))}
+    <div className="w-full h-full bg-neutral-800 ">
+      <div className="w-full h-full flex justify-center flex-wrap gap-3 p-2 mt-4">
+        {todo?.map((t) => (
+          <TodoForm name={t.name} items={t.items} />
+        ))}
+      </div>
     </div>
   );
 }
