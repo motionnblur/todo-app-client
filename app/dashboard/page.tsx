@@ -32,7 +32,7 @@ export default function page() {
           <User className="cursor-pointer" />
         </div>
       </div>
-      <div className="w-full h-full flex flex-row">
+      <div className="w-full h-full flex flex-row overflow-auto">
         {leftMenu && <LeftMenu />}
         <MainCanvas />
       </div>
