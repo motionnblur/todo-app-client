@@ -1,27 +1,13 @@
 "use client";
 
+import LeftMenu from "@/components/LeftMenu";
+import MainCanvas from "@/components/MainCanvas";
 import React, { useState } from "react";
 import { AlignJustify, User } from "react-feather";
 
 export default function page() {
   const [leftMenu, setLeftMenu] = useState<Boolean>(false);
 
-  const LeftMenu = () => {
-    return (
-      <div className="h-full w-[28vh] bg-zinc-950 flex flex-col">
-        <div className="w-full h-full p-2 flex flex-col">
-          <div className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer">
-            <div className="flex justify-center items-center mt-1">
-              Add todo
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  };
-  const MainCanvas = () => {
-    return <div className="h-full w-full bg-neutral-800"></div>;
-  };
   const openLeftMenu = () => {
     setLeftMenu(!leftMenu);
   };
