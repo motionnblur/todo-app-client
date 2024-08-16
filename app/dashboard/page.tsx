@@ -2,6 +2,12 @@ import React from "react";
 import { User } from "react-feather";
 
 export default function page() {
+  const LeftMenu = () => {
+    return <div className="h-full w-[28vh] bg-zinc-950"></div>;
+  };
+  const MainCanvas = () => {
+    return <div className="h-full w-full bg-neutral-800"></div>;
+  };
   return (
     <main className="w-screen h-screen flex flex-col">
       <div className="w-full h-[8vh] bg-zinc-900 flex flex-row">
@@ -19,8 +25,8 @@ export default function page() {
         <div className="h-full w-1/6 p-1 flex items-center"></div>
       </div>
       <div className="w-full h-full flex flex-row">
-        <div className="h-full w-[28vh] bg-zinc-950"></div>
-        <div className="h-full w-full bg-neutral-800"></div>
+        <LeftMenu />
+        <MainCanvas />
       </div>
     </main>
   );
