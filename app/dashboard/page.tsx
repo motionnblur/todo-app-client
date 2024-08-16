@@ -5,12 +5,15 @@ export default function page() {
   return (
     <main className="w-screen h-screen flex flex-col">
       <div className="w-full h-[8vh] bg-gray-900">
-        <div className="h-full w-full p-1 flex items-center">
+        <div className="h-full w-full p-1 flex items-center gap-4">
           <div className="h-10 w-10 bg-black rounded-full ml-4 cursor-pointer flex items-center justify-center">
             <User />
           </div>
-          <div className="w-24 h-4/5 bg-black rounded-md flex justify-center items-center">
+          <div className="w-24 h-4/5 bg-black rounded-md flex justify-center items-center cursor-pointer ml-4">
             Dashboard
+          </div>
+          <div className="w-24 h-4/5 bg-black rounded-md flex justify-center items-center cursor-pointer">
+            Settings
           </div>
         </div>
       </div>
