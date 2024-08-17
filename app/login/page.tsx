@@ -27,7 +27,11 @@ export default function page() {
               <div className="text-black text-xs ml-1">Show Password</div>
             </div>
           </div>
-          <div className="w-full h-24"></div>
+          <div className="w-full h-28 flex justify-center items-center">
+            <div className="w-full h-8 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer">
+              Login
+            </div>
+          </div>
         </div>
       </div>
     </main>
