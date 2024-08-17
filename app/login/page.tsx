@@ -11,12 +11,12 @@ export default function page() {
           <div className="w-full h-full flex flex-col items-center justify-center gap-3">
             <input
               type="text"
-              className="w-full h-10 rounded-md text-stone-900"
+              className="w-full h-10 rounded-md text-stone-900 p-2"
               placeholder="  Username"
             />
             <input
               type="text"
-              className="w-full h-10 rounded-md text-stone-900"
+              className="w-full h-10 rounded-md text-stone-900 p-2"
               placeholder="  Password"
             />
             <div className="w-full h-6 flex flex-row">
