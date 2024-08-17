@@ -15,7 +15,7 @@ export default function page() {
               placeholder="  Username"
             />
             <input
-              type="text"
+              type="password"
               className="w-full h-10 rounded-md text-stone-900 p-2"
               placeholder="  Password"
             />
