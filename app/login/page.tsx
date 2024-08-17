@@ -19,7 +19,13 @@ export default function page() {
               className="w-full h-10 rounded-md text-stone-900"
               placeholder="  Password"
             />
-            <div className="w-full h-4"></div>
+            <div className="w-full h-6 flex flex-row">
+              <input
+                type="checkbox"
+                className="w-1/6 h-4 rounded-md cursor-pointer"
+              />
+              <div className="text-black text-xs ml-1">Show Password</div>
+            </div>
           </div>
           <div className="w-full h-24"></div>
         </div>
