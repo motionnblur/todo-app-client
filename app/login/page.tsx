@@ -27,15 +27,20 @@ export default function page() {
               <div className="text-black text-xs ml-1">Show Password</div>
             </div>
           </div>
-          <div className="w-full h-28 flex justify-center items-center flex-col gap-1">
+          <div className="w-full h-32 flex justify-center items-center flex-col gap-1">
             <div className="w-full h-8 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer">
               Login
             </div>
             <div className="text-black text-xs flex flex-row gap-1">
               Forgot{" "}
-              <div className="text-sky-500 text-xs font-bold">password</div> ?
+              <div className="text-sky-500 text-xs font-bold cursor-pointer">
+                password
+              </div>{" "}
+              ?
             </div>
-            <div className="text-sky-500 text-xs font-bold">Sign up</div>
+            <div className="text-sky-500 text-xs font-bold cursor-pointer">
+              Sign up
+            </div>
           </div>
         </div>
       </div>
