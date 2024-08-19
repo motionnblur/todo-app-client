@@ -1,8 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+
+const backendUrl: string = "http://localhost:8080/user";
 
 export default function page() {
   const [typePassword, setTypePassword] = useState<String>("password");
+  const userNameRef = useRef<HTMLInputElement>(null);
+  const userPasswordRef = useRef<HTMLInputElement>(null);
 
   const getPasswState = (): string => {
     if (typePassword === "password") return "text";
@@ -21,11 +25,13 @@ export default function page() {
               type="text"
               className="w-full h-10 rounded-md text-stone-900 p-2"
               placeholder=" Username"
+              ref={userNameRef}
             />
             <input
               type={`${typePassword}`}
               className="w-full h-10 rounded-md text-stone-900 p-2"
               placeholder=" Password"
+              ref={userPasswordRef}
             />
             <div className="w-full h-6 flex flex-row">
               <input
@@ -39,7 +45,26 @@ export default function page() {
             </div>
           </div>
           <div className="w-full h-32 flex justify-center items-center flex-col gap-1">
-            <div className="w-full h-9 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer">
+            <div
+              className="w-full h-9 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer"
+              onMouseUp={() => {
+                const userForm: ILoginForm = {
+                  name: userNameRef!.current?.value!,
+                  password: userPasswordRef!.current?.value!,
+                };
+                fetch(backendUrl, {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify(userForm),
+                }).then((res) => {
+                  if (res.status == 200) {
+                    alert("ok");
+                  }
+                });
+              }}
+            >
               Login
             </div>
             <div className="text-black text-xs flex flex-row gap-1">
