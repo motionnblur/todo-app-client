@@ -1,7 +1,8 @@
 "use client";
 import React, { useRef, useState } from "react";
 
-const backendUrl: string = "http://localhost:8080/user";
+const loginUrl: string = "http://localhost:8080/user/login";
+const signUp: string = "http://localhost:8080/user/signup";
 
 export default function page() {
   const [loginStr, setLoginStr] = useState<String>("Login");
@@ -12,6 +13,41 @@ export default function page() {
   const getPasswState = (): string => {
     if (typePassword === "password") return "text";
     return "password";
+  };
+
+  const loginFunc = (): void => {
+    const userForm: ILoginForm = {
+      name: userNameRef!.current?.value!,
+      password: userPasswordRef!.current?.value!,
+    };
+    fetch(loginUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userForm),
+    }).then((res) => {
+      if (res.status == 200) {
+        alert("ok");
+      }
+    });
+  };
+  const signUpFunc = (): void => {
+    const userForm: ILoginForm = {
+      name: userNameRef!.current?.value!,
+      password: userPasswordRef!.current?.value!,
+    };
+    fetch(signUp, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userForm),
+    }).then((res) => {
+      if (res.status == 200) {
+        alert("ok");
+      }
+    });
   };
 
   return (
@@ -49,21 +85,9 @@ export default function page() {
             <div
               className="w-full h-9 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer"
               onMouseUp={() => {
-                const userForm: ILoginForm = {
-                  name: userNameRef!.current?.value!,
-                  password: userPasswordRef!.current?.value!,
-                };
-                fetch(backendUrl, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(userForm),
-                }).then((res) => {
-                  if (res.status == 200) {
-                    alert("ok");
-                  }
-                });
+                loginStr === "Login" ? loginFunc() : signUpFunc();
+                userNameRef.current!.value! = "";
+                userPasswordRef.current!.value! = "";
               }}
             >
               {loginStr}
@@ -81,6 +105,9 @@ export default function page() {
                 loginStr === "Login"
                   ? setLoginStr("Sign up")
                   : setLoginStr("Login");
+
+                userNameRef.current!.value! = "";
+                userPasswordRef.current!.value! = "";
               }}
             >
               {loginStr === "Login" ? "Sign up" : "Login"}
