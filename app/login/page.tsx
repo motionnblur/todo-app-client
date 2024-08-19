@@ -69,11 +69,11 @@ export default function page() {
               {loginStr}
             </div>
             <div className="text-black text-xs flex flex-row gap-1">
-              Forgot
+              {loginStr === "Login" ? "Forgot" : ""}
               <div className="text-sky-500 text-xs font-bold cursor-pointer">
-                password
+                {loginStr === "Login" ? "password" : ""}
               </div>
-              ?
+              {loginStr === "Login" ? "?" : ""}
             </div>
             <div
               className="text-sky-500 text-xs font-bold cursor-pointer"
