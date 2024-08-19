@@ -78,7 +78,9 @@ export default function page() {
             <div
               className="text-sky-500 text-xs font-bold cursor-pointer"
               onMouseUp={() => {
-                setLoginStr("Sign up");
+                loginStr === "Login"
+                  ? setLoginStr("Sign up")
+                  : setLoginStr("Login");
               }}
             >
               {loginStr === "Login" ? "Sign up" : "Login"}
