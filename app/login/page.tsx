@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 const backendUrl: string = "http://localhost:8080/user";
 
 export default function page() {
+  const [loginStr, setLoginStr] = useState<String>("Login");
   const [typePassword, setTypePassword] = useState<String>("password");
   const userNameRef = useRef<HTMLInputElement>(null);
   const userPasswordRef = useRef<HTMLInputElement>(null);
@@ -18,7 +19,7 @@ export default function page() {
       <div className="w-full h-full flex justify-center items-center">
         <div className="w-52 h-80 bg-slate-300 rounded-xl mb-14 flex flex-col p-5">
           <div className="w-full h-12 flex items-center justify-center text-black text-xl">
-            Login
+            {loginStr}
           </div>
           <div className="w-full h-full flex flex-col items-center justify-center gap-3">
             <input
@@ -65,7 +66,7 @@ export default function page() {
                 });
               }}
             >
-              Login
+              {loginStr}
             </div>
             <div className="text-black text-xs flex flex-row gap-1">
               Forgot
@@ -74,8 +75,13 @@ export default function page() {
               </div>
               ?
             </div>
-            <div className="text-sky-500 text-xs font-bold cursor-pointer">
-              Sign up
+            <div
+              className="text-sky-500 text-xs font-bold cursor-pointer"
+              onMouseUp={() => {
+                setLoginStr("Sign up");
+              }}
+            >
+              {loginStr === "Login" ? "Sign up" : "Login"}
             </div>
           </div>
         </div>
