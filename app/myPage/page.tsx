@@ -15,7 +15,6 @@ export default function page() {
     }).then(async (res) => {
       if (res.status == 200) {
         const json = await res.json();
-        console.log(json);
 
         for (let i = 0; i < json.length; i++) {
           const name: string = json[i].todoName;
