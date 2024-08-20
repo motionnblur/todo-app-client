@@ -1,19 +1,20 @@
-export function auth(): boolean {
-  var result: boolean = false;
+export async function auth(): Promise<boolean> {
+  try {
+    const response = await fetch("http://localhost:8080/user/auth", {
+      method: "GET",
+      credentials: "include",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
-  fetch("http://localhost:8080/user/auth", {
-    method: "GET",
-    credentials: "include",
-    mode: "cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((res) => {
-    if (res.status == 200) {
-      result = true;
+    if (response.ok) {
+      return true;
     } else {
-      result = false;
+      return false;
     }
-  });
-  return result;
+  } catch (error) {
+    return false;
+  }
 }

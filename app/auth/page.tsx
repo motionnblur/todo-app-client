@@ -6,8 +6,13 @@ import { redirect } from "next/navigation";
 
 export default function page() {
   useEffect(() => {
-    const res: boolean = auth();
-    if (!res) redirect("/login");
+    auth()
+      .then((isAuthenticated) => {
+        console.log(isAuthenticated);
+      })
+      .catch((error) => {
+        console.error("Authentication error:", error);
+      });
   }, []);
   return <div>page</div>;
 }
