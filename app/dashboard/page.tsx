@@ -11,6 +11,7 @@ export default function page() {
   const openLeftMenu = () => {
     setLeftMenu(!leftMenu);
   };
+
   return (
     <main className="w-screen h-screen flex flex-col">
       <div className="w-full h-[8vh] bg-zinc-900 flex flex-row">
