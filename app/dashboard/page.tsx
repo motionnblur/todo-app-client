@@ -13,9 +13,6 @@ export default function page() {
     setLeftMenu(!leftMenu);
   };
 
-  useEffect(() => {
-    auth();
-  }, []);
   return (
     <main className="w-screen h-screen flex flex-col">
       <div className="w-full h-[8vh] bg-zinc-900 flex flex-row">

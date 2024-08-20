@@ -1,4 +1,4 @@
-export async function auth(): Promise<boolean> {
+export async function auth(sessionID: string): Promise<boolean> {
   try {
     const response = await fetch("http://localhost:8080/user/auth", {
       method: "GET",
@@ -6,6 +6,7 @@ export async function auth(): Promise<boolean> {
       mode: "cors",
       headers: {
         "Content-Type": "application/json",
+        cookie: `SESSION_ID=${sessionID}`,
       },
     });
 
