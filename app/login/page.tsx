@@ -1,10 +1,13 @@
 "use client";
 import React, { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const loginUrl: string = "http://localhost:8080/user/login";
 const signUp: string = "http://localhost:8080/user/signup";
 
 export default function page() {
+  const { push } = useRouter();
+
   const [loginStr, setLoginStr] = useState<String>("Login");
   const [typePassword, setTypePassword] = useState<String>("password");
   const userNameRef = useRef<HTMLInputElement>(null);
@@ -30,7 +33,7 @@ export default function page() {
       body: JSON.stringify(userForm),
     }).then((res) => {
       if (res.status == 200) {
-        alert("ok");
+        push("/dashboard");
       }
     });
   };
@@ -46,8 +49,8 @@ export default function page() {
       },
       body: JSON.stringify(userForm),
     }).then((res) => {
-      if (res.status == 200) {
-        alert("ok");
+      if (res.status == 201) {
+        setLoginStr("Login");
       }
     });
   };

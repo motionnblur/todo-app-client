@@ -2,9 +2,8 @@
 
 import LeftMenu from "@/components/LeftMenu";
 import MainCanvas from "@/components/MainCanvas";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { AlignJustify, User } from "react-feather";
-import { auth } from "../auth/auth";
 
 export default function page() {
   const [leftMenu, setLeftMenu] = useState<Boolean>(false);
