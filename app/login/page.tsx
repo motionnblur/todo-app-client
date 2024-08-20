@@ -22,6 +22,8 @@ export default function page() {
     };
     fetch(loginUrl, {
       method: "POST",
+      credentials: "include",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
