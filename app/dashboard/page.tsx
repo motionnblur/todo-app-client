@@ -2,8 +2,9 @@
 
 import LeftMenu from "@/components/LeftMenu";
 import MainCanvas from "@/components/MainCanvas";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AlignJustify, User } from "react-feather";
+import { auth } from "../auth/auth";
 
 export default function page() {
   const [leftMenu, setLeftMenu] = useState<Boolean>(false);
@@ -11,6 +12,10 @@ export default function page() {
   const openLeftMenu = () => {
     setLeftMenu(!leftMenu);
   };
+
+  useEffect(() => {
+    auth();
+  }, []);
   return (
     <main className="w-screen h-screen flex flex-col">
       <div className="w-full h-[8vh] bg-zinc-900 flex flex-row">
