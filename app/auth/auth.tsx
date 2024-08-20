@@ -1,4 +1,6 @@
-export function auth(): void {
+export function auth(): boolean {
+  var result: boolean = false;
+
   fetch("http://localhost:8080/user/auth", {
     method: "GET",
     credentials: "include",
@@ -8,9 +10,10 @@ export function auth(): void {
     },
   }).then((res) => {
     if (res.status == 200) {
-      alert("ok");
+      result = true;
     } else {
-      alert("error");
+      result = false;
     }
   });
+  return result;
 }
