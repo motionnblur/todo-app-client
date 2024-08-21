@@ -5,11 +5,16 @@ const url: string = "http://localhost:8080/todo/getAllTodo";
 let todos: Array<ITodoForm> = [];
 
 export default function MainCanvas() {
-  /*   const [todo, setTodo] = useState<ITodoForm[]>();
+  const [todo, setTodo] = useState<ITodoForm[]>();
 
   useEffect(() => {
     fetch(url, {
       method: "GET",
+      credentials: "include",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
     }).then(async (res) => {
       if (res.status == 200) {
         const json = await res.json();
@@ -38,7 +43,5 @@ export default function MainCanvas() {
         <TodoForm name={t.name} items={t.items} />
       ))}
     </div>
-  ); */
-
-  return <main></main>;
+  );
 }

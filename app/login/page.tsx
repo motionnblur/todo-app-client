@@ -86,7 +86,7 @@ export default function page() {
               <div className="text-black text-sm ml-1">Show password</div>
             </div>
           </div>
-          <div className="w-full h-32 flex justify-center items-center flex-col gap-2">
+          <div className="w-full h-32 flex justify-center items-center flex-col">
             <div
               className="w-full h-10 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer"
               onMouseUp={() => {
@@ -97,7 +97,7 @@ export default function page() {
             >
               {loginStr}
             </div>
-            <div className="text-black text-sm flex flex-row gap-1">
+            <div className="text-black text-sm flex flex-row gap-1 mt-2">
               {loginStr === "Login" ? "Forgot" : ""}
               <div className="text-sky-500 text-sm font-bold cursor-pointer">
                 {loginStr === "Login" ? "password" : ""}
