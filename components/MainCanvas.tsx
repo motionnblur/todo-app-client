@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TodoForm from "./TodoForm";
+import TodoTemp from "./TodoTemp";
 
 const url: string = "http://localhost:8080/todo/getAllTodo";
 let todos: Array<ITodoForm> = [];
@@ -10,11 +11,6 @@ export default function MainCanvas() {
   useEffect(() => {
     fetch(url, {
       method: "GET",
-      credentials: "include",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
     }).then(async (res) => {
       if (res.status == 200) {
         const json = await res.json();
@@ -39,9 +35,10 @@ export default function MainCanvas() {
 
   return (
     <div className="w-full h-full flex justify-center flex-wrap gap-3 p-2">
-      {todo?.map((t) => (
+      {/* {todo?.map((t) => (
         <TodoForm name={t.name} items={t.items} />
-      ))}
+      ))} */}
+      <TodoTemp />
     </div>
   );
 }
