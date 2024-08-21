@@ -9,7 +9,7 @@ export default function Home() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   return (
-    <main className="w-screen h-screen flex-col p-6">
+    <main className="w-full h-screen flex-col p-6">
       <div className="w-full h-full flex flex-col">
         <div className="w-full h-[8vh] flex justify-center items-center flex-row gap-3">
           <input
