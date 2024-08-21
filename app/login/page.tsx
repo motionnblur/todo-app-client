@@ -56,13 +56,13 @@ export default function page() {
   };
 
   return (
-    <main className="w-screen h-screen">
+    <main className="w-full h-screen">
       <div className="w-full h-full flex justify-center items-center">
-        <div className="w-52 h-80 bg-slate-300 rounded-xl mb-14 flex flex-col p-5">
-          <div className="w-full h-12 flex items-center justify-center text-black text-xl">
+        <div className="w-64 h-96 bg-slate-300 rounded-xl mb-14 flex flex-col p-6">
+          <div className="w-full h-12 flex items-center justify-center text-black text-3xl">
             {loginStr}
           </div>
-          <div className="w-full h-full flex flex-col items-center justify-center gap-3">
+          <div className="w-full h-4/6 flex flex-col items-center justify-center gap-3">
             <input
               type="text"
               className="w-full h-10 rounded-md text-stone-900 p-2"
@@ -78,17 +78,17 @@ export default function page() {
             <div className="w-full h-6 flex flex-row">
               <input
                 type="checkbox"
-                className="w-1/6 h-4 rounded-md cursor-pointer"
+                className="w-1/6 h-5 rounded-md cursor-pointer"
                 onMouseUp={() => {
                   setTypePassword(getPasswState);
                 }}
               />
-              <div className="text-black text-xs ml-1">Show password</div>
+              <div className="text-black text-sm ml-1">Show password</div>
             </div>
           </div>
-          <div className="w-full h-32 flex justify-center items-center flex-col gap-1">
+          <div className="w-full h-32 flex justify-center items-center flex-col gap-2">
             <div
-              className="w-full h-9 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer"
+              className="w-full h-10 bg-cyan-500 rounded-xl flex items-center justify-center text-sl cursor-pointer"
               onMouseUp={() => {
                 loginStr === "Login" ? loginFunc() : signUpFunc();
                 userNameRef.current!.value! = "";
@@ -97,15 +97,15 @@ export default function page() {
             >
               {loginStr}
             </div>
-            <div className="text-black text-xs flex flex-row gap-1">
+            <div className="text-black text-sm flex flex-row gap-1">
               {loginStr === "Login" ? "Forgot" : ""}
-              <div className="text-sky-500 text-xs font-bold cursor-pointer">
+              <div className="text-sky-500 text-sm font-bold cursor-pointer">
                 {loginStr === "Login" ? "password" : ""}
               </div>
               {loginStr === "Login" ? "?" : ""}
             </div>
             <div
-              className="text-sky-500 text-xs font-bold cursor-pointer"
+              className="text-sky-500 text-sm font-bold cursor-pointer"
               onMouseUp={() => {
                 loginStr === "Login"
                   ? setLoginStr("Sign up")

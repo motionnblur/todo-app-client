@@ -5,7 +5,7 @@ const url: string = "http://localhost:8080/todo/getAllTodo";
 let todos: Array<ITodoForm> = [];
 
 export default function MainCanvas() {
-  const [todo, setTodo] = useState<ITodoForm[]>();
+  /*   const [todo, setTodo] = useState<ITodoForm[]>();
 
   useEffect(() => {
     fetch(url, {
@@ -38,5 +38,7 @@ export default function MainCanvas() {
         <TodoForm name={t.name} items={t.items} />
       ))}
     </div>
-  );
+  ); */
+
+  return <main></main>;
 }

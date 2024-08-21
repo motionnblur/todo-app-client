@@ -34,7 +34,7 @@ export default function page() {
     });
   }, []);
   return (
-    <main className="h-screen w-screen p-6 flex gap-4 flex-wrap">
+    <main className="h-screen w-full p-6 flex gap-4 flex-wrap">
       {todo?.map((t) => (
         <TodoForm name={t.name} items={t.items} />
       ))}
