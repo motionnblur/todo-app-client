@@ -12,7 +12,12 @@ export default function LeftMenu() {
         <div
           className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer flex justify-center items-center"
           onMouseUp={() => {
-            setTodoAtom(!todoAtom);
+            if (todoListAtom) {
+              setTodoListAtom(false);
+              setTodoAtom(true);
+            } else {
+              setTodoAtom(!todoAtom);
+            }
           }}
         >
           Create todo
@@ -20,7 +25,12 @@ export default function LeftMenu() {
         <div
           className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer flex justify-center items-center"
           onMouseUp={() => {
-            setTodoListAtom(!todoListAtom);
+            if (todoAtom) {
+              setTodoAtom(false);
+              setTodoListAtom(true);
+            } else {
+              setTodoListAtom(!todoListAtom);
+            }
           }}
         >
           My todo list
