@@ -1,9 +1,10 @@
 import React from "react";
-import { useSetAtom } from "jotai";
-import { createTodoAtom } from "@/state/manager";
+import { useAtom, useSetAtom } from "jotai";
+import { createTodoAtom, myTodoListAtom } from "@/state/manager";
 
 export default function LeftMenu() {
-  const use_setTodoAtom = useSetAtom(createTodoAtom);
+  const [todoAtom, setTodoAtom] = useAtom(createTodoAtom);
+  const [todoListAtom, setTodoListAtom] = useAtom(myTodoListAtom);
 
   return (
     <div className="h-full w-[28vh] bg-zinc-950 flex flex-col z-10">
@@ -11,12 +12,17 @@ export default function LeftMenu() {
         <div
           className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer flex justify-center items-center"
           onMouseUp={() => {
-            use_setTodoAtom(true);
+            setTodoAtom(!todoAtom);
           }}
         >
           Create todo
         </div>
-        <div className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer flex justify-center items-center">
+        <div
+          className="w-full h-8 bg-slate-800 rounded-md mt-2 cursor-pointer flex justify-center items-center"
+          onMouseUp={() => {
+            setTodoListAtom(!todoListAtom);
+          }}
+        >
           My todo list
         </div>
       </div>
