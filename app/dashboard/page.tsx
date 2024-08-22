@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import { AlignJustify } from "react-feather";
 
 const getNameUrl: string = "http://localhost:8080/user/userName";
+const MainCanvasMemo = React.memo(MainCanvas);
 
 export default function page() {
   const [leftMenu, setLeftMenu] = useState<Boolean>(false);
@@ -54,7 +55,7 @@ export default function page() {
       </div>
       <div className="w-full h-full flex flex-row overflow-auto">
         {leftMenu && <LeftMenu />}
-        <MainCanvas />
+        <MainCanvasMemo />
       </div>
     </main>
   );
