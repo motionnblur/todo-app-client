@@ -27,7 +27,7 @@ export default function TodoTemp() {
           </div>
         </div>
 
-        <div className="w-full h-full flex justify-center items-center">
+        <div className="w-full h-full flex justify-center mt-12">
           {todoName && (
             <TodoForm name={inputRef.current?.value!} items={null} />
           )}
